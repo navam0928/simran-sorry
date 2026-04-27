@@ -1,0 +1,157 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Sorry Simran ❤️</title>  
+  
+<style>  
+body {  
+    margin: 0;  
+    padding: 0;  
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;  
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);  
+    text-align: center;  
+    color: white;  
+}  
+  
+.container {  
+    padding: 20px;  
+    max-width: 420px;  
+    margin: auto;  
+}  
+  
+h1 {  
+    font-size: 2rem;  
+    margin-top: 20px;  
+}  
+  
+#typing {  
+    font-size: 1.1rem;  
+    margin: 20px 10px;  
+    min-height: 100px;  
+    white-space: pre-line;  
+    line-height: 1.5;  
+}  
+  
+img {  
+    width: 90%;  
+    max-width: 300px;  
+    border-radius: 18px;  
+    margin-top: 20px;  
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);  
+}  
+  
+button {  
+    padding: 12px 22px;  
+    font-size: 15px;  
+    border: none;  
+    border-radius: 25px;  
+    margin: 10px;  
+    cursor: pointer;  
+    transition: 0.3s;  
+}  
+  
+#yesBtn {  
+    background: white;  
+    color: #ff4b6e;  
+}  
+  
+#noBtn {  
+    background: transparent;  
+    border: 2px solid white;  
+    color: white;  
+    position: relative;  
+}  
+  
+button:active {  
+    transform: scale(0.95);  
+}  
+  
+.heart {  
+    position: fixed;  
+    color: red;  
+    font-size: 18px;  
+    animation: float 4s linear infinite;  
+}  
+  
+@keyframes float {  
+    0% { transform: translateY(0); opacity: 1; }  
+    100% { transform: translateY(-100vh); opacity: 0; }  
+}  
+</style>  
+</head>  
+  
+<body>  
+  
+<div class="container">  
+    <h1>Simran ❤️ I'm Really Sorry</h1>  
+  
+    <img src="us.jpg" alt="Us ❤️">  
+  
+    <p id="typing"></p>  
+  
+    <h3>Will you forgive me? 🥺</h3>  
+  
+    <button id="yesBtn" onclick="forgive()">Yes ❤️</button>  
+    <button id="noBtn" onclick="moveButton()">No 😒</button>  
+</div>  
+  
+<script>  
+let text = `Simran...  
+I know I hurt you, and I truly regret it 💔  
+  
+When I see us together, I realize how lucky I am to have you in my life ❤️  
+  
+You are not just important to me...  
+You are my happiness, my peace, my everything 🥺  
+  
+Please give me one chance to make things right.  
+I promise I'll do better... for us 💖`;  
+  
+let i = 0;  
+function typeEffect() {  
+    if (i < text.length) {  
+        document.getElementById("typing").innerHTML += text.charAt(i);  
+        i++;  
+        setTimeout(typeEffect, 30);  
+    }  
+}  
+typeEffect();  
+  
+function forgive() {  
+    document.body.innerHTML = `  
+        <div style="padding:30px;text-align:center">  
+            <h1>Thank You Simran ❤️🥺</h1>  
+            <img src="us.jpg" style="width:85%;max-width:300px;border-radius:18px;">  
+            <p style="margin-top:20px;font-size:16px;line-height:1.6">  
+            I promise I'll never hurt you like this again.<br>  
+            I love you more than anything ❤️  
+            </p>  
+        </div>  
+    `;  
+    startHearts();  
+}  
+  
+function moveButton() {  
+    let btn = document.getElementById("noBtn");  
+    let x = Math.random() * 200 - 100;  
+    let y = Math.random() * 100 - 50;  
+    btn.style.transform = `translate(${x}px, ${y}px)`;  
+}  
+  
+function startHearts() {  
+    setInterval(() => {  
+        let heart = document.createElement("div");  
+        heart.className = "heart";  
+        heart.innerHTML = "❤️";  
+        heart.style.left = Math.random() * window.innerWidth + "px";  
+        document.body.appendChild(heart);  
+  
+        setTimeout(() => heart.remove(), 4000);  
+    }, 250);  
+}  
+</script>  
+  
+</body>  
+</html>  
